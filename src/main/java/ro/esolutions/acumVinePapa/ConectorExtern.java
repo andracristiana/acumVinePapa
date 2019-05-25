@@ -1,6 +1,7 @@
 package ro.esolutions.acumVinePapa;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
@@ -9,9 +10,16 @@ import java.util.List;
 @RestController
 public class ConectorExtern {
 
-    @GetMapping("/churches")
-    public String getAllChurches(){
+    @GetMapping("/churches/{month}")
+    public String getAllChurches(@PathVariable String month){
+
+        String raspuns = "Bisericile mele sunt: ";
         List<Biserica> biserici = new ArrayList<>();
+        for(int i = 0; i< biserici.size(); ++i){
+            if(biserici.get(i).luna == month){
+                raspuns += biserici.get(i).nume + ", ";
+            }
+        }
 
         Biserica sfIosif = new Biserica();
         Biserica catedralaMN = new Biserica();
@@ -54,7 +62,7 @@ public class ConectorExtern {
         domnitaBalasa.luna = "january";
         domnitaBalasa.tipReligie = "monoteista";
 
-        return "Bisericile mele sunt: " + sfIosif.nume;
+        return raspuns;
 
     }
 }
