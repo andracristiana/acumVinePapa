@@ -13,7 +13,7 @@ public class ConectorExtern {
     @GetMapping("/churches/{month}")
     public String getAllChurches(@PathVariable String month){
 
-        String raspuns = "Bisericile mele sunt: ";
+        String raspuns = "The pope will be in the following churches: ";
         List<Biserica> biserici = new ArrayList<>();
 
 
@@ -32,31 +32,31 @@ public class ConectorExtern {
 
 
         sfIosif.nume = "Biserica Sfantul Iosif";
-        sfIosif.luna = "may";
+        sfIosif.luna = "May";
         sfIosif.tipReligie = "ortodoxa";
 
 
 
         catedralaMN.nume = "Catedrala Mantuirii Neamului";
-        catedralaMN.luna = "july";
+        catedralaMN.luna = "July";
         catedralaMN.tipReligie = "ortodoxa";
 
 
 
         sfIon.nume = "Biserica Sfantul Ion";
-        sfIon.luna = "september";
+        sfIon.luna = "September";
         sfIon.tipReligie = "catolica";
 
 
 
         bisericaMea.nume = "Biserica Din coltul strazii";
-        bisericaMea.luna = "november";
+        bisericaMea.luna = "November";
         bisericaMea.tipReligie = "catolica";
 
 
 
         domnitaBalasa.nume = "Biserica Domnita Balasa";
-        domnitaBalasa.luna = "january";
+        domnitaBalasa.luna = "January";
         domnitaBalasa.tipReligie = "monoteista";
 
 
