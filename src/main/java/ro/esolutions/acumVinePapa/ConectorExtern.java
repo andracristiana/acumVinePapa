@@ -15,11 +15,8 @@ public class ConectorExtern {
 
         String raspuns = "Bisericile mele sunt: ";
         List<Biserica> biserici = new ArrayList<>();
-        for(int i = 0; i< biserici.size(); ++i){
-            if(biserici.get(i).luna == month){
-                raspuns += biserici.get(i).nume + ", ";
-            }
-        }
+
+
 
         Biserica sfIosif = new Biserica();
         Biserica catedralaMN = new Biserica();
@@ -46,9 +43,9 @@ public class ConectorExtern {
 
 
 
-        catedralaMN.nume = "Biserica Sfantul Ion";
-        catedralaMN.luna = "september";
-        catedralaMN.tipReligie = "catolica";
+        sfIon.nume = "Biserica Sfantul Ion";
+        sfIon.luna = "september";
+        sfIon.tipReligie = "catolica";
 
 
 
@@ -61,6 +58,13 @@ public class ConectorExtern {
         domnitaBalasa.nume = "Biserica Domnita Balasa";
         domnitaBalasa.luna = "january";
         domnitaBalasa.tipReligie = "monoteista";
+
+
+        for(int i = 0; i< biserici.size();i++){
+            if(biserici.get(i).luna.equals(month)){
+                raspuns += biserici.get(i).nume + ", ";
+            }
+        }
 
         return raspuns;
 
