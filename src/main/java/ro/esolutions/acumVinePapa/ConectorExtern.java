@@ -8,6 +8,13 @@ public class ConectorExtern {
 
     @GetMapping("/churches")
     public String getAllChurches(){
-        return "Bisericile mele sunt: ";
+        Biserica sfIosif = new Biserica();
+
+        sfIosif.nume = "Biserica Sfantul Iosif";
+        sfIosif.luna = "mai";
+        sfIosif.tipReligie = "ortodoxa";
+
+        return "Bisericile mele sunt: " + sfIosif.nume;
+
     }
 }
